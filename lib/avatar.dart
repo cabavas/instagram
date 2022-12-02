@@ -9,19 +9,19 @@ class Avatar extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 75,
-          width: 75,
+          height: 35,
+          width: 35,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(75),
+            borderRadius: BorderRadius.circular(35),
             gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              colors: [Colors.red, Colors.purple, Colors.red, Colors.yellow],
+              begin: Alignment.center,
+              colors: [Colors.red, Colors.purple, Colors.red, Colors.orange],
             ),
           ),
         ),
         Container(
-            height: 75,
-            width: 75,
+            height: 35,
+            width: 35,
             padding: const EdgeInsets.all(3),
             child: CircleAvatar(
               backgroundImage: AssetImage(image),
