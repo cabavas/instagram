@@ -6,7 +6,11 @@ class Post extends StatelessWidget {
   final String postImage;
   final String authorImage;
   final String postName;
-  const Post({Key? key,required this.authorImage, required this.postImage, required this.postName})
+  const Post(
+      {Key? key,
+      required this.authorImage,
+      required this.postImage,
+      required this.postName})
       : super(key: key);
 
   @override
@@ -54,21 +58,27 @@ class Post extends StatelessWidget {
             ),
           ],
         ),
-         Padding(
+        Padding(
           padding: const EdgeInsets.only(left: 10, top: 5, bottom: 5),
           child: Row(
             children: const [
               Text('Curtido por '),
-              Text('Mr. Bean ', style: TextStyle(fontWeight: FontWeight.bold),),
+              Text(
+                'Mr. Bean ',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               Text('e '),
-              Text('outras pessoas ', style: TextStyle(fontWeight: FontWeight.bold),),
+              Text(
+                'outras pessoas ',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
         // RichText(
         //   text: const TextSpan(
         //     children: <TextSpan>[
-              
+
         //       TextSpan(text: 'Curtido por '),
         //       TextSpan(text: 'Mr. Bean ', style: TextStyle(fontWeight: FontWeight.bold)),
         //       TextSpan(text: 'e '),
@@ -78,8 +88,8 @@ class Post extends StatelessWidget {
         //   ),
         // ),
         const Padding(
-          padding:  EdgeInsets.only(left: 10, top: 5, bottom: 5),
-          child:  Text(
+          padding: EdgeInsets.only(left: 10, top: 5, bottom: 5),
+          child: Text(
             'Ver todos os 69 comentários',
             style: TextStyle(color: Colors.grey),
           ),
