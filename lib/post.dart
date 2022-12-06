@@ -1,6 +1,5 @@
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
-
 import 'avatar.dart';
 
 class Post extends StatelessWidget {
@@ -39,7 +38,7 @@ class Post extends StatelessWidget {
           children: const [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(Icons.favorite_border_outlined),
+              child: Icon(FontAwesomeIcons.heart),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
