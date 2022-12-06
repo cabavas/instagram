@@ -1,21 +1,25 @@
+import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
 
 import 'avatar.dart';
 
 class Post extends StatelessWidget {
   final String postImage;
+  final String authorImage;
   final String postName;
-  const Post({Key? key, required this.postImage, required this.postName}) : super(key: key);
+  const Post({Key? key,required this.authorImage, required this.postImage, required this.postName})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 20, top: 30),
+          padding: const EdgeInsets.only(left: 10, top: 30),
           child: Row(
-            children:  [
-              Avatar(image: postImage),
+            children: [
+              Avatar(image: authorImage),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(postName),
@@ -29,7 +33,7 @@ class Post extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 15),
-          child: Image.asset('assets/images/post.jpg'),
+          child: Image.asset(postImage),
         ),
         Row(
           children: const [
@@ -39,20 +43,48 @@ class Post extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(Icons.comment_outlined),
+              child: Icon(FontAwesomeIcons.comment),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(Icons.send_outlined),
+              child: Icon(FontAwesomeIcons.paperPlane),
             ),
             Padding(
               padding: EdgeInsets.only(left: 180),
-              child: Icon(Icons.save_outlined),
+              child: Icon(FontAwesomeIcons.bookmark),
             ),
           ],
         ),
-        const Text('Curtido por Mr. Bean e outras pessoas'),
-        const Text('Ver todos os 69 comentários', style: TextStyle(color: Colors.grey),),
+         Padding(
+          padding: const EdgeInsets.only(left: 10, top: 5, bottom: 5),
+          child: Row(
+            children: const [
+              Text('Curtido por '),
+              Text('Mr. Bean ', style: TextStyle(fontWeight: FontWeight.bold),),
+              Text('e '),
+              Text('outras pessoas ', style: TextStyle(fontWeight: FontWeight.bold),),
+            ],
+          ),
+        ),
+        // RichText(
+        //   text: const TextSpan(
+        //     children: <TextSpan>[
+              
+        //       TextSpan(text: 'Curtido por '),
+        //       TextSpan(text: 'Mr. Bean ', style: TextStyle(fontWeight: FontWeight.bold)),
+        //       TextSpan(text: 'e '),
+        //       TextSpan(text: 'outras pessoas ', style: TextStyle(fontWeight: FontWeight.bold)),
+
+        //     ]
+        //   ),
+        // ),
+        const Padding(
+          padding:  EdgeInsets.only(left: 10, top: 5, bottom: 5),
+          child:  Text(
+            'Ver todos os 69 comentários',
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
       ],
     );
   }

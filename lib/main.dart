@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/instargam.dart';
+import 'package:instagram/instagram.dart';
 
 void main() {
   runApp(const MyApp());
